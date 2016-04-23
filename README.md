@@ -1,14 +1,22 @@
 # ns2
 ns2学习相关
 Instll ns2 in the ubuntu16.04LTS
-sudo apt update
-sudo apt upgrade
-sudo apt install build-essential
-sduo apt install tcl tcl-dev tk tk-dev
-sudo apt install libxmu-dev libxmu-headers
-tar zxvf ns-allinone-2.35.tar.gz
-vi +137 /home/user/ns-allinone-2.35/ns2.35/linkstate/ls.h
-#将第137行的     void eraseAll() { erase(baseMap::begin(), baseMap::end()); } 改为      void eraseAll() {this->erase(baseMap::begin(), baseMap::end()); } 
-cd /home/user/ns-allinone-2.35
-./install
-
+licuncun@ubuntu:~$ sudo apt update
+licuncun@ubuntu:~$ sudo apt upgrade
+licuncun@ubuntu:~$ sudo apt install tcl-dev tk-dev
+licuncun@ubuntu:~$ sudo apt install libxmu-dev libxmu-headers
+licuncun@ubuntu:~$ vi +137 ns-allinone-2.35/ns-2.35/linkstate/ls.h
+add"this->"int the "{" between "erase"
+licuncun@ubuntu:~$ cd ns-allinone-2.35/
+licuncun@ubuntu:~/ns-allinone-2.35$ ./install 
+licuncun@ubuntu:~$vi + .bashrc
+Add 
+export PATH="$PATH:/home/licuncun/ns-allinone-2.35/bin:/home/licuncun/ns-allinone-2.35/tcl8.5.10/unix:/home/licuncun/ns-allinone-2.35/tk8.5.10/unix"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/home/licuncun/ns-allinone-2.35/otcl-1.14:/home/licuncun/ns-allinone-2.35/lib"
+export TCL_LIBRARY="$TCL_LIBRARY:/home/licuncun/ns-allinone-2.35/tcl8.5.10/library"
+at the end of the text
+licuncun@ubuntu:~$ source .bashrc
+licuncun@ubuntu:~$ nam
+licuncun@ubuntu:~$ ns
+% nam
+That's OK
